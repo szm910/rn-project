@@ -11,34 +11,15 @@ import {
   Text,
   View
 } from 'react-native';
-import Setup from "./js/Setup.js";
+import Setup from "./app/Setup";
 
 
 export default class App extends Component<{}> {
   render() {
     return (
-      <View style={styles.container}>
-        <Setup ></Setup>
+      <View>
+        <Setup></Setup>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});

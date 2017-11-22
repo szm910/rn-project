@@ -7,23 +7,19 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text
+  Text,
+  ScrollView,
+  Image
 } from 'react-native';
+import ScrollViewSimple from "./simple/ScrollViewSimple";
+import FlatListBasics from "./simple/FlatListBasics";
 
 
 export default class Setup extends Component {
   render() {
     return (
-      <View >
-        <Text>
-          Text1
-        </Text>
-        <Text >
-          Text2
-        </Text>
-        <Text >
-          Text3
-        </Text>
+      <View>
+         <ScrollViewSimple></ScrollViewSimple>
       </View>
     );
   }
