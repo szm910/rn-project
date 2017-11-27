@@ -5,22 +5,14 @@
  */
 
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  Image
-} from 'react-native';
-import ScrollViewSimple from "./simple/ScrollViewSimple";
-import FlatListBasics from "./simple/FlatListBasics";
+import UserInfo from './page/UserInfo'
 
 
 export default class Setup extends Component {
   render() {
     return (
-      <View>
-         <ScrollViewSimple></ScrollViewSimple>
-      </View>
+        <UserInfo title='* 头像'></UserInfo>
     );
   }
 }
+
