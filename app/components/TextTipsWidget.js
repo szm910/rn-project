@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { AppRegistry, View, Text, StyleSheet, PixelRatio, Dimensions, TouchableHighlight, processColor } from 'react-native'
 import BaseComponent from './BaseComponent';
 import RightArrow from '../widget/RightArrow';
-import Alert from './Alert';
+import Choose from '../dialog/animate/Choose';
 
 var screenWidth = Dimensions.get('window').width;
 const selectedArr = ["男", "女"];
@@ -32,7 +32,7 @@ export default class TextTipsWidget extends BaseComponent {
                         <RightArrow />
                     </View>
                 </TouchableHighlight>
-                <Alert ref={(dialog) => { this.dialog = dialog; }}></Alert>
+                <Choose ref={(dialog) => { this.dialog = dialog; }}></Choose>
             </View>
         );
     }
