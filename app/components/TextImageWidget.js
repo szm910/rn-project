@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { AppRegistry, View, TextInput, Text, StyleSheet, Image, PixelRatio,Dimensions } from 'react-native'
 import BaseComponent from './BaseComponent';
+import RightArrow from '../widget/RightArrow'
 
 var screenWidth=Dimensions.get('window').width;
 
@@ -14,15 +15,13 @@ export default class TextImageWidget extends BaseComponent {
                 <View style={styles.row}>
                     <Text
                         numberOfLines={1}
-                        style={styles.textInputTitle} >
+                        style={styles.textTitle} >
                         {this.props.title}
                     </Text>
                     <View style={styles.textImage}>
                         <Image source={require('../../img/timg.jpeg')} style={styles.image}/>
                     </View>
-                    <View style={styles.rightArrow}>
-                        <Image source={require('../../img/rightarrow.png')}  style={styles.arrowimage}/>
-                    </View>
+                    <RightArrow/>
                 </View>
             </View>
         );
@@ -37,14 +36,14 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        height: 80,
+        height:80,
         alignItems: 'flex-end',
         marginRight: 15,
         marginLeft: 15,
         borderBottomWidth: 0.5 / PixelRatio.get(),
         borderColor: 'gray',//需要标色  
     },
-    textInputTitle: {
+    textTitle: {
         width: 80,
         fontSize: 17,
         marginBottom:10
@@ -61,14 +60,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         borderRadius: 19,
     },
-    rightArrow:{  
-        paddingLeft:10,
-        marginBottom:10
-    },
-    arrowimage: {
-        width: 20,
-        height: 20,
-        backgroundColor: '#FFF',
-        borderRadius: 19,
-    },
+    
 }); 

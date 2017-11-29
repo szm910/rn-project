@@ -52053,9 +52053,17 @@ var _TextImageWidget = require(491                            ); // 491 = ../com
 
 var _TextImageWidget2 = _interopRequireDefault(_TextImageWidget);
 
-var _TextInputWidget = require(495                            ); // 495 = ../components/TextInputWidget
+var _TextInputWidget = require(496                            ); // 496 = ../components/TextInputWidget
 
 var _TextInputWidget2 = _interopRequireDefault(_TextInputWidget);
+
+var _TextTipsWidget = require(497                           ); // 497 = ../components/TextTipsWidget
+
+var _TextTipsWidget2 = _interopRequireDefault(_TextTipsWidget);
+
+var _Alert = require(498                  ); // 498 = ../components/Alert
+
+var _Alert2 = _interopRequireDefault(_Alert);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52100,22 +52108,22 @@ var UserInfo = _wrapComponent('UserInfo')(function (_Component) {
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 17
+            lineNumber: 21
           }
         },
         _react3.default.createElement(_TextImageWidget2.default, { title: '* \u5934\u50CF', __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 22
           }
         }),
         _react3.default.createElement(_TextInputWidget2.default, { title: '* \u5B66\u5386', placeholder: '\u8BF7\u586B\u5199\u6BD5\u4E1A/\u5C31\u8BFB\u5B66\u6821', __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 23
           }
         }),
-        _react3.default.createElement(_TextInputWidget2.default, { title: '* \u5B66\u5386', placeholder: '\u8BF7\u586B\u5199\u6BD5\u4E1A/\u5C31\u8BFB\u5B66\u6821', __source: {
+        _react3.default.createElement(_TextTipsWidget2.default, { title: '* \u6027\u522B', tips: '\u8BF7\u9009\u62E9', __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 24
           }
         })
       );
@@ -52152,6 +52160,10 @@ var _BaseComponent2 = require(492              ); // 492 = ./BaseComponent
 
 var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
 
+var _RightArrow = require(493           ); // 493 = ./RightArrow
+
+var _RightArrow2 = _interopRequireDefault(_RightArrow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52178,23 +52190,23 @@ var TextImageWidget = function (_BaseComponent) {
                 _reactNative.View,
                 { style: styles.rowContainer, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 13
+                        lineNumber: 14
                     }
                 },
                 _react2.default.createElement(
                     _reactNative.View,
                     { style: styles.row, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 14
+                            lineNumber: 15
                         }
                     },
                     _react2.default.createElement(
                         _reactNative.Text,
                         {
                             numberOfLines: 1,
-                            style: styles.textInputTitle, __source: {
+                            style: styles.textTitle, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 15
+                                lineNumber: 16
                             }
                         },
                         this.props.title
@@ -52203,28 +52215,21 @@ var TextImageWidget = function (_BaseComponent) {
                         _reactNative.View,
                         { style: styles.textImage, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 20
+                                lineNumber: 21
                             }
                         },
-                        _react2.default.createElement(_reactNative.Image, { source: require(493                  ), style: styles.image, __source: { // 493 = ../../img/timg.jpeg
+                        _react2.default.createElement(_reactNative.Image, { source: require(495                  ), style: styles.image, __source: { // 495 = ../../img/timg.jpeg
                                 fileName: _jsxFileName,
-                                lineNumber: 21
+                                lineNumber: 22
                             }
                         })
                     ),
-                    _react2.default.createElement(
-                        _reactNative.View,
-                        { style: styles.rightArrow, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 23
-                            }
-                        },
-                        _react2.default.createElement(_reactNative.Image, { source: require(494                       ), style: styles.arrowimage, __source: { // 494 = ../../img/rightarrow.png
-                                fileName: _jsxFileName,
-                                lineNumber: 24
-                            }
-                        })
-                    )
+                    _react2.default.createElement(_RightArrow2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 24
+                        }
+                    })
                 )
             );
         }
@@ -52249,7 +52254,7 @@ var styles = _reactNative.StyleSheet.create({
         marginLeft: 15,
         borderBottomWidth: 0.5 / _reactNative.PixelRatio.get(),
         borderColor: 'gray' },
-    textInputTitle: {
+    textTitle: {
         width: 80,
         fontSize: 17,
         marginBottom: 10
@@ -52265,17 +52270,8 @@ var styles = _reactNative.StyleSheet.create({
         height: 38,
         backgroundColor: '#FFF',
         borderRadius: 19
-    },
-    rightArrow: {
-        paddingLeft: 10,
-        marginBottom: 10
-    },
-    arrowimage: {
-        width: 20,
-        height: 20,
-        backgroundColor: '#FFF',
-        borderRadius: 19
     }
+
 });
 }, 491, null, "firstApp/app/components/TextImageWidget.js");
 __d(/* firstApp/app/components/BaseComponent.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
@@ -52310,10 +52306,81 @@ var BaseComponent = function (_Component) {
 
 exports.default = BaseComponent;
 }, 492, null, "firstApp/app/components/BaseComponent.js");
-__d(/* firstApp/img/timg.jpeg */function(global, require, module, exports) {module.exports=require(324                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":299,"height":300,"scales":[1],"hash":"a63750692f2f4c3207a2fe494fef1f64","name":"timg","type":"jpeg"}); // 324 = react-native/Libraries/Image/AssetRegistry
-}, 493, null, "firstApp/img/timg.jpeg");
+__d(/* firstApp/app/components/RightArrow.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = '/opt/reactnativeworkspace/rn-project/app/components/RightArrow.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseComponent2 = require(492              ); // 492 = ./BaseComponent
+
+var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RightArrow = function (_BaseComponent) {
+    _inherits(RightArrow, _BaseComponent);
+
+    function RightArrow(props) {
+        _classCallCheck(this, RightArrow);
+
+        return _possibleConstructorReturn(this, (RightArrow.__proto__ || Object.getPrototypeOf(RightArrow)).call(this, props));
+    }
+
+    _createClass(RightArrow, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _reactNative.View,
+                { style: styles.rightArrow, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 11
+                    }
+                },
+                _react2.default.createElement(_reactNative.Image, { source: require(494                       ), style: styles.arrowimage, __source: { // 494 = ../../img/rightarrow.png
+                        fileName: _jsxFileName,
+                        lineNumber: 12
+                    }
+                })
+            );
+        }
+    }]);
+
+    return RightArrow;
+}(_BaseComponent3.default);
+
+exports.default = RightArrow;
+
+var styles = _reactNative.StyleSheet.create({
+    rightArrow: {
+        paddingLeft: 10,
+        marginBottom: 10
+    },
+    arrowimage: {
+        width: 20,
+        height: 20,
+        backgroundColor: '#FFF',
+        borderRadius: 19
+    }
+});
+}, 493, null, "firstApp/app/components/RightArrow.js");
 __d(/* firstApp/img/rightarrow.png */function(global, require, module, exports) {module.exports=require(324                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":200,"height":200,"scales":[1],"hash":"81a28885b62fa8e41fe0cb238820cf8a","name":"rightarrow","type":"png"}); // 324 = react-native/Libraries/Image/AssetRegistry
 }, 494, null, "firstApp/img/rightarrow.png");
+__d(/* firstApp/img/timg.jpeg */function(global, require, module, exports) {module.exports=require(324                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":299,"height":300,"scales":[1],"hash":"a63750692f2f4c3207a2fe494fef1f64","name":"timg","type":"jpeg"}); // 324 = react-native/Libraries/Image/AssetRegistry
+}, 495, null, "firstApp/img/timg.jpeg");
 __d(/* firstApp/app/components/TextInputWidget.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -52388,34 +52455,24 @@ var TextInputWidget = _wrapComponent('TextInputWidget')(function (_Component) {
                         }
                     },
                     _react3.default.createElement(
-                        _reactNative.View,
-                        { style: styles.item, __source: {
+                        _reactNative.Text,
+                        { style: styles.textTitle, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 18
                             }
                         },
-                        _react3.default.createElement(
-                            _reactNative.Text,
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 19
-                                }
-                            },
-                            ' ',
-                            this.props.title
-                        )
+                        this.props.title
                     ),
                     _react3.default.createElement(
                         _reactNative.View,
                         { style: styles.item, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 21
+                                lineNumber: 19
                             }
                         },
                         _react3.default.createElement(_reactNative.TextInput, { underlineColorAndroid: 'transparent', placeholder: this.props.placeholder, style: styles.textInput, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 22
+                                lineNumber: 20
                             }
                         })
                     )
@@ -52437,26 +52494,536 @@ var styles = _reactNative.StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        height: 60,
-        alignItems: 'center',
+        height: 70,
+        alignItems: 'flex-end',
         marginRight: 15,
         marginLeft: 15,
+        paddingBottom: 10,
         borderBottomWidth: 0.5 / _reactNative.PixelRatio.get(),
         borderColor: 'gray' },
     item: {
         flex: 1,
-        justifyContent: 'flex-end'
+        justifyContent: 'center'
     },
-    textInputTitle: {
-        width: 80,
-        fontSize: 15,
+    textTitle: {
+        flex: 1,
+        width: 70,
+        fontSize: 17,
         justifyContent: 'center'
     },
     textInput: {
         backgroundColor: '#FFF'
     }
 });
-}, 495, null, "firstApp/app/components/TextInputWidget.js");
+}, 496, null, "firstApp/app/components/TextInputWidget.js");
+__d(/* firstApp/app/components/TextTipsWidget.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = '/opt/reactnativeworkspace/rn-project/app/components/TextTipsWidget.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseComponent2 = require(492              ); // 492 = ./BaseComponent
+
+var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
+
+var _RightArrow = require(493           ); // 493 = ./RightArrow
+
+var _RightArrow2 = _interopRequireDefault(_RightArrow);
+
+var _Alert = require(498      ); // 498 = ./Alert
+
+var _Alert2 = _interopRequireDefault(_Alert);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var screenWidth = _reactNative.Dimensions.get('window').width;
+var selectedArr = ["男", "女"];
+
+var TextTipsWidget = function (_BaseComponent) {
+    _inherits(TextTipsWidget, _BaseComponent);
+
+    function TextTipsWidget() {
+        _classCallCheck(this, TextTipsWidget);
+
+        return _possibleConstructorReturn(this, (TextTipsWidget.__proto__ || Object.getPrototypeOf(TextTipsWidget)).apply(this, arguments));
+    }
+
+    _createClass(TextTipsWidget, [{
+        key: 'showAlertSelected',
+        value: function showAlertSelected() {
+            this.dialog.show("请选择性别", '男', '女', this);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                _reactNative.View,
+                { style: styles.columnContainer, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 15
+                    }
+                },
+                _react2.default.createElement(
+                    _reactNative.TouchableHighlight,
+                    { style: styles.rowContainer, onPress: function onPress() {
+                            _this2.showAlertSelected();
+                        }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 16
+                        }
+                    },
+                    _react2.default.createElement(
+                        _reactNative.View,
+                        { style: styles.row, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 17
+                            }
+                        },
+                        _react2.default.createElement(
+                            _reactNative.Text,
+                            {
+                                numberOfLines: 1,
+                                style: styles.textTitle, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 18
+                                }
+                            },
+                            this.props.title
+                        ),
+                        _react2.default.createElement(
+                            _reactNative.Text,
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 23
+                                }
+                            },
+                            this.state.sex
+                        ),
+                        _react2.default.createElement(
+                            _reactNative.View,
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 24
+                                }
+                            },
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: styles.textTips, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 25
+                                    }
+                                },
+                                this.props.tips
+                            )
+                        ),
+                        _react2.default.createElement(_RightArrow2.default, {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 27
+                            }
+                        })
+                    )
+                ),
+                _react2.default.createElement(_Alert2.default, { ref: function ref(dialog) {
+                        _this2.dialog = dialog;
+                    }, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 30
+                    }
+                })
+            );
+        }
+    }]);
+
+    return TextTipsWidget;
+}(_BaseComponent3.default);
+
+exports.default = TextTipsWidget;
+
+
+var styles = _reactNative.StyleSheet.create({
+    rowContainer: {
+        backgroundColor: '#FFF',
+        width: screenWidth
+    },
+    row: {
+        flexDirection: 'row',
+        height: 70,
+        alignItems: 'flex-end',
+        marginRight: 15,
+        marginLeft: 15,
+        paddingBottom: 10,
+        borderBottomWidth: 0.5 / _reactNative.PixelRatio.get(),
+        borderColor: 'gray' },
+    textTitle: {
+        flex: 1,
+        width: 80,
+        fontSize: 17,
+        marginBottom: 10
+    },
+
+    textTips: {
+        marginBottom: 15,
+        color: '#ccc'
+    }
+});
+}, 497, null, "firstApp/app/components/TextTipsWidget.js");
+__d(/* firstApp/app/components/Alert.js */function(global, require, module, exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(127                                                    ); // 127 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/opt/reactnativeworkspace/rn-project/app/components/Alert.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _reactTimerMixin = require(386                ); // 386 = react-timer-mixin
+
+var _reactTimerMixin2 = _interopRequireDefault(_reactTimerMixin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+    Alert: {
+        displayName: 'Alert'
+    }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: '/opt/reactnativeworkspace/rn-project/app/components/Alert.js',
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+}
+
+var _Dimensions$get = _reactNative.Dimensions.get('window'),
+    width = _Dimensions$get.width,
+    height = _Dimensions$get.height;
+
+var navigatorH = 64;var aWidth = 300,
+    aHeight = 214;
+var left = 0,
+    top = 0;
+var middleLeft = (width - aWidth) / 2,
+    middleTop = (height - aHeight) / 2 - navigatorH;
+
+
+var styles = _reactNative.StyleSheet.create({
+    container: {
+        position: "absolute",
+        width: width,
+        height: height,
+        left: left,
+        top: top
+    },
+    mask: {
+        justifyContent: "center",
+        backgroundColor: "#383838",
+        opacity: 0.8,
+        position: "absolute",
+        width: width,
+        height: height,
+        left: left,
+        top: top
+    },
+    tip: {
+        width: aWidth,
+        height: aHeight,
+        left: middleLeft,
+        backgroundColor: "#fff",
+        alignItems: "center",
+        justifyContent: "space-between"
+    },
+    tipTitleView: {
+        height: 55,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    tipTitleText: {
+        color: "#999999",
+        fontSize: 14
+    },
+    tipContentView: {
+        width: aWidth,
+        borderTopWidth: 0.5,
+        borderColor: "#f0f0f0",
+        height: 45,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    tipText: {
+        color: "#e6454a",
+        fontSize: 17,
+        textAlign: "center"
+    },
+    button: {
+        height: 45,
+        backgroundColor: '#fff',
+        borderColor: '#e6454a',
+        borderWidth: 1,
+        borderRadius: 4,
+        alignSelf: 'stretch',
+        justifyContent: 'center',
+        marginLeft: 10,
+        marginRight: 10
+    },
+    buttonText: {
+        fontSize: 17,
+        color: "#e6454a",
+        textAlign: "center"
+    },
+    gap: {
+        height: 10,
+        width: aWidth,
+        backgroundColor: '#383838',
+        opacity: 0.8
+    }
+});
+
+var Alert = _wrapComponent('Alert')(function (_Component) {
+    _inherits(Alert, _Component);
+
+    function Alert(props) {
+        _classCallCheck(this, Alert);
+
+        var _this = _possibleConstructorReturn(this, (Alert.__proto__ || Object.getPrototypeOf(Alert)).call(this, props));
+
+        _this.mixins = [_reactTimerMixin2.default];
+        _this.parent = {};
+
+        _this.state = {
+            offset: new _reactNative.Animated.Value(0),
+            opacity: new _reactNative.Animated.Value(0),
+            title: "",
+            choose1: "",
+            choose2: "",
+            hide: true
+        };
+        return _this;
+    }
+
+    _createClass(Alert, [{
+        key: 'render',
+        value: function render() {
+            if (this.state.hide) {
+                return _react3.default.createElement(_reactNative.View, {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 117
+                    }
+                });
+            } else {
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    { style: styles.container, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 120
+                        }
+                    },
+                    _react3.default.createElement(_reactNative.Animated.View, { style: styles.mask, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 121
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.Animated.View,
+                        { style: [styles.tip, {
+                                transform: [{
+                                    translateY: this.state.offset.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [height, height - aHeight - 204]
+                                    })
+                                }]
+                            }], __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 124
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.View,
+                            { style: styles.tipTitleView, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 132
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                { style: styles.tipTitleText, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 133
+                                    }
+                                },
+                                this.state.title
+                            )
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.TouchableHighlight,
+                            { style: styles.tipContentView, underlayColor: '#f0f0f0', onPress: this.choose.bind(this, this.state.choose1), __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 135
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                { style: styles.tipText, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 136
+                                    }
+                                },
+                                this.state.choose1
+                            )
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.TouchableHighlight,
+                            { style: styles.tipContentView, underlayColor: '#f0f0f0', onPress: this.choose.bind(this, this.state.choose2), __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 139
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                { style: styles.tipText, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 140
+                                    }
+                                },
+                                this.state.choose2
+                            )
+                        ),
+                        _react3.default.createElement(_reactNative.View, { style: styles.gap, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 143
+                            }
+                        }),
+                        _react3.default.createElement(
+                            _reactNative.TouchableHighlight,
+                            { style: styles.button, underlayColor: '#f0f0f0', onPress: this.iknow.bind(this), __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 145
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                { style: styles.buttonText, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 146
+                                    }
+                                },
+                                '\u53D6\u6D88'
+                            )
+                        )
+                    )
+                );
+            }
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'in',
+        value: function _in() {
+            _reactNative.Animated.parallel([_reactNative.Animated.timing(this.state.opacity, {
+                easing: _reactNative.Easing.linear,
+                duration: 500,
+                toValue: 0.8
+            }), _reactNative.Animated.timing(this.state.offset, {
+                easing: _reactNative.Easing.linear,
+                duration: 500,
+                toValue: 1
+            })]).start();
+        }
+    }, {
+        key: 'out',
+        value: function out() {
+            var _this2 = this;
+
+            _reactNative.Animated.parallel([_reactNative.Animated.timing(this.state.opacity, {
+                easing: _reactNative.Easing.linear,
+                duration: 500,
+                toValue: 0
+            }), _reactNative.Animated.timing(this.state.offset, {
+                easing: _reactNative.Easing.linear,
+                duration: 500,
+                toValue: 0
+            })]).start();
+
+            setTimeout(function () {
+                return _this2.setState({ hide: true });
+            }, 500);
+        }
+    }, {
+        key: 'iknow',
+        value: function iknow(event) {
+            if (!this.state.hide) {
+                this.out();
+            }
+        }
+    }, {
+        key: 'choose',
+        value: function choose(msg) {
+            if (!this.state.hide) {
+                this.out();
+                this.parent.setState({ sex: msg });
+            }
+        }
+    }, {
+        key: 'show',
+        value: function show(title, choose1, choose2, obj) {
+            this.parent = obj;
+            if (this.state.hide) {
+                this.setState({ title: title, choose1: choose1, choose2: choose2, hide: false }, this.in);
+            }
+        }
+    }]);
+
+    return Alert;
+}(_react2.Component));
+
+exports.default = Alert;
+}, 498, null, "firstApp/app/components/Alert.js");
 ;require(50);
 ;require(0);
 //# sourceMappingURL=index.map

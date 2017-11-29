@@ -15,11 +15,9 @@ export default class TextInputWidget extends Component {
         return (
             <View style={styles.rowContainer} >
                 <View style={styles.row}>
+                    <Text style={styles.textTitle}>{this.props.title}</Text>
                     <View style={styles.item}>
-                        <Text> {this.props.title}</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <TextInput underlineColorAndroid='transparent' placeholder={this.props.placeholder} style={styles.textInput}></TextInput>
+                        <TextInput underlineColorAndroid='transparent'  placeholder={this.props.placeholder} style={styles.textInput}></TextInput>
                     </View>
                 </View>
             </View>
@@ -34,23 +32,26 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        height: 60,
-        alignItems: 'center',
+        height: 70,
+        alignItems: 'flex-end',
         marginRight: 15,
         marginLeft: 15,
+        paddingBottom: 10,
         borderBottomWidth: 0.5 / PixelRatio.get(),
         borderColor: 'gray',//需要标色  
     },
     item: {
         flex: 1,
-        justifyContent: 'flex-end'
-    },
-    textInputTitle: {
-        width: 80,
-        fontSize: 15,
         justifyContent: 'center'
     },
+    textTitle: {
+        flex: 1,
+        width: 70,
+        fontSize: 17,
+        alignItems: 'flex-end',
+    },
     textInput: {
-        backgroundColor: '#FFF'
+        backgroundColor: '#FFF',
+        textAlign: 'right',
     }
 }); 
