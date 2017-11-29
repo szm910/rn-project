@@ -5,13 +5,15 @@
  */
 
 import React, { Component } from 'react';
+import {View,Text,TouchableHighlight} from 'react-native'
 import UserInfo from './page/UserInfo'
 
 
 export default class Setup extends Component {
   render() {
     return (
-        <UserInfo title='* 头像'></UserInfo>
+        
+        <UserInfo></UserInfo>
     );
   }
 }

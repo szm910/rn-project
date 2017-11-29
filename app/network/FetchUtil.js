@@ -3,17 +3,7 @@
  * https://github.com/facebook/react-native
  */
 import React, { Component } from 'react';
-import {
-    AppRegistry,
-    StyleSheet,
-    Text,
-    View,
-    ListView,
-    Image,
-    TouchableOpacity,
-    Platform,
-    AsyncStorage
-} from 'react-native';
+
  
 export default class FetchUitl extends React.Component{
     /*
@@ -61,7 +51,5 @@ export default class FetchUitl extends React.Component{
                 callback(responseJSON)
             }) .done();
     }
- 
- 
  
 }
