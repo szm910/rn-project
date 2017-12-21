@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AppRegistry, View, Text, StyleSheet, PixelRatio, Dimensions, TouchableHighlight, processColor } from 'react-native'
+import { AppRegistry, View, Text, StyleSheet, PixelRatio, Dimensions, TouchableHighlight,DeviceEventEmitter } from 'react-native'
 import BaseComponent from './BaseComponent';
 import RightArrow from '../widget/RightArrow';
 import Choose from '../dialog/animate/Choose';
@@ -16,6 +16,7 @@ export default class TextTipsWidget extends BaseComponent {
     showAlertSelected() {
         this.dialog.show('请选择性别', '男', '女', this);
     }
+    
     render() {
         return (
             <View style={styles.columnContainer}>
@@ -27,7 +28,7 @@ export default class TextTipsWidget extends BaseComponent {
                             {this.props.title}
                         </Text>
                         <View >
-                            <Text style={styles.textTips}>{this.state.sex}</Text>
+                            <Text onSelected={()=>{}} style={styles.textTips}>{this.state.sex}</Text>
                         </View>
                         <RightArrow />
                     </View>

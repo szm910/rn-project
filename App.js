@@ -12,24 +12,50 @@ import {
   View,
   Dimensions
 } from 'react-native';
-import Setup from "./app/Setup";
+import ListUserInfo from "./app/page/ListUserInfo";
+import UserInfo from "./app/page/UserInfo";
+import { StackNavigator } from 'react-navigation';
+import TabView from './app/components/TabView'
 
-export default class App extends Component {
+
+class ListUserInfoRouter extends Component {
+  static navigationOptions = {
+    title: 'Home',
+    header: null
+  }
   render() {
-    return (
-      <View style={styles.container}>
-        <Setup></Setup>
-      </View>
-    );
+    return <ListUserInfo navigation={this.props.navigation}/>
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection:'column',
-    marginTop: 20, //去除状态栏图标  
-    backgroundColor: 'gray'
+class UserInfoRouter extends Component {
+  static navigationOptions = {
+    header: null
   }
-}); 
+  render() {
+    return <UserInfo navigation={this.props.navigation}/>
+  }
+};
 
+const StackRouteConfigs = {
+  ListUserInfo: { screen: ListUserInfoRouter },
+  UserInfo: { screen: UserInfoRouter },
+};
+
+const StackNavigatorConfigs = {
+  initialRouteName: 'ListUserInfo',
+  navigationOptions: {
+      title: '标题',
+      headerStyle: {backgroundColor: '#5da8ff'},
+      headerTitleStyle: {color: '#333333'},
+  }
+};
+
+const Navigation = StackNavigator(StackRouteConfigs,StackNavigatorConfigs);
+
+
+export default class App extends Component {
+  render() {
+    return <TabView />;
+  }
+}

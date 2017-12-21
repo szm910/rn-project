@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
     Text,
     TextInput,
@@ -11,13 +12,25 @@ import {
 screenWidth = Dimensions.get('window').width;
 
 export default class TextInputWidget extends Component {
+    constructor(){
+        super();
+        this.setState({
+            text:'123'
+        })
+    }
+    static propTypes={
+        title: PropTypes.string
+    }
+    setText(_text){
+        this.props.onChange(_text);
+    }
     render() {
         return (
             <View style={styles.rowContainer} >
                 <View style={styles.row}>
                     <Text style={styles.textTitle}>{this.props.title}</Text>
                     <View style={styles.item}>
-                        <TextInput underlineColorAndroid='transparent'  placeholder={this.props.placeholder} style={styles.textInput}></TextInput>
+                        <TextInput onChangeText={(text)=>{this.setText(text)}}  underlineColorAndroid='transparent'  placeholder={this.props.placeholder} style={styles.textInput}></TextInput>
                     </View>
                 </View>
             </View>
